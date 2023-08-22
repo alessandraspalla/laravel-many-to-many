@@ -5,6 +5,8 @@
     <h1 class="text-center m-3">All Projects</h1>
     <h4 class="text-center mb-3">
         <a class="text-success text-decoration-none" href="{{ route('project.create') }}">Create new project</a>
+        <br>
+        <a class="text-success text-decoration-none" href="{{ route('technology.create') }}">Create new technology</a>
     </h4>
     <div class="d-flex justify-content-center">
         <ul class="list-unstyled">

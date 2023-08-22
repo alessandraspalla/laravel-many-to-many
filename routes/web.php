@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoggedController;
+use App\Http\Controllers\TechnologyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ GuestController :: class, 'index' ])
@@ -19,6 +20,21 @@ Route::get('/create', [ LoggedController :: class, 'create' ])
 Route::post('/store', [ LoggedController :: class, 'store' ])
     ->middleware(['auth'])
     ->name('project.store');
+    
+Route::get('/technologies/create', [ TechnologyController :: class, 'create' ])
+    ->name('technology.create');
+
+Route::post('/technologies/store', [ TechnologyController :: class, 'store' ])
+    ->name('technology.store');
+
+Route::get('/technologies/edit/{id}', [ TechnologyController :: class, 'edit' ])
+    ->name('technology.edit');
+
+Route::put('/technologies/update/{id}', [ TechnologyController :: class, 'update' ])
+    ->name('technology.update');
+
+Route::get('/technologies/{id}', [ TechnologyController :: class, 'show' ])
+    -> name('technology.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
